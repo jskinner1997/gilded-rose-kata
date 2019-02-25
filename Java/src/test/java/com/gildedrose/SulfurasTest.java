@@ -7,11 +7,24 @@ import static org.junit.Assert.assertEquals;
 
 public class SulfurasTest {
     @Test
-    public void legendaryCatalogItemsNeverHaveToBeSoldOrDecreaseInQuality() {
+    public void is_a_legendary_item_and_as_such_its_quality_is_80() {
+        CatalogItem item = Create.sulfuras().obj();
+        assertEquals(80, item.quality());
+    }
+
+    @Test
+    public void Never_has_to_be_sold() {
+        CatalogItem item = Create.sulfuras().obj();
+        item.process();
+        assertEquals(Integer.MAX_VALUE, item.sellIn());
+    }
+
+    @Test
+    public void Never_decreases_in_quality()
+    {
         CatalogItem item = Create.sulfuras().sellIn(8).quality(10).obj();
         item.process();
 
-        assertEquals(8, item.sellIn());
-        assertEquals(10, item.quality());
+        assertEquals(80, item.quality());
     }
 }

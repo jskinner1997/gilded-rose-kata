@@ -58,7 +58,7 @@ public class Create {
         if (AgedBrie.AGED_BRIE.equals(itemName))
             return new AgedBrie(itemName, itemSellIn, itemQuality);
         if (Sulfuras.SULFURAS.equals(itemName))
-            return new Sulfuras(itemName, itemSellIn, itemQuality);
+            return new Sulfuras();
         if (BackstagePasses.BACKSTAGE_PASSES.equals(itemName))
             return new BackstagePasses(itemName, itemSellIn, itemQuality);
         if (Conjured.CONJURED.equals(itemName))
